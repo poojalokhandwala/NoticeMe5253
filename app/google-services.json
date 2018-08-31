@@ -1,0 +1,50 @@
+{
+  "project_info": {
+    "project_number": "681027846180",
+    "firebase_url": "https://noticeme-5253.firebaseio.com",
+    "project_id": "noticeme-5253",
+    "storage_bucket": "noticeme-5253.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:681027846180:android:863d7070fb853676",
+        "android_client_info": {
+          "package_name": "com.example.smitlimbani.noticeme5253"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "681027846180-gb1dv3cs3nrbabegc2kq0el709lf4dtm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smitlimbani.noticeme5253",
+            "certificate_hash": "1fe80f85655ffad02cb0c399360e92970b358da5"
+          }
+        },
+        {
+          "client_id": "681027846180-3ah8humo4sn9fn16cc2ga390qqnqg4in.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQZ3MWJdSF4Zvvj4FWw_9mujJEwxuMO2M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
