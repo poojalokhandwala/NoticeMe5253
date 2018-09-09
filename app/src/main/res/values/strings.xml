@@ -78,4 +78,8 @@
     <string name="org_name">Org Name</string>
     <string name="_00_members">00 members</string>
     <string name="hona_chahiye">hona chahiye</string>
+    <string name="display_name">Display Name</string>
+    <string name="email_id">Email Id</string>
+    <string name="contact_no">Contact No</string>
+    <string name="contact_android_string_no">contact @android:string/no</string>
 </resources>

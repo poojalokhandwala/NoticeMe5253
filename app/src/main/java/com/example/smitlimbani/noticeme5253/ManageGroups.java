@@ -1,5 +1,6 @@
 package com.example.smitlimbani.noticeme5253;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextClock;
@@ -62,7 +64,23 @@ public class ManageGroups extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull GroupViewHolder holder, int position, @NonNull GroupDetails model) {
                 holder.mGroupName.setText(model.getGroup_name().toString());
                 holder.mOrgName.setText(model.getOrg_name().toString());
+                final String currentGroupId = getRef(holder.getAdapterPosition()).getKey().toString();
+
+                holder.mGroupsBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(ManageGroups.this, SubGroups.class).putExtra("group_id", currentGroupId));
+                    }
+                });
+
+                holder.mMembersBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(ManageGroups.this, GroupMembers.class).putExtra("group_id", currentGroupId));
+                    }
+                });
             }
+
         };
 
         mGroupList.setLayoutManager(new LinearLayoutManager(this));
@@ -71,17 +89,7 @@ public class ManageGroups extends AppCompatActivity {
 
     }
 
-    public class GroupViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView mGroupName;
-        public TextView mOrgName;
-
-        public GroupViewHolder(View itemView) {
-            super(itemView);
-            mGroupName=(TextView)itemView.findViewById(R.id.groupName);
-            mOrgName=(TextView)itemView.findViewById(R.id.orgName);
-        }
-    }
 
 //    @Override
 //    protected void onStart() {

@@ -25,6 +25,7 @@ public class RegistrationForm extends AppCompatActivity {
     private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference mDatabaseReference = mDatabase.getReference();
     private FirebaseUser currentUser;
+//    private EditText mEmailId;
 
 
     @Override
@@ -36,6 +37,7 @@ public class RegistrationForm extends AppCompatActivity {
         mLastName = (EditText) findViewById(R.id.lastName);
         mDOB = (EditText) findViewById(R.id.DOB);
         mContactNo = (EditText) findViewById(R.id.contactNo);
+//        mEmailId = (EditText) findViewById(R.id.emailId);
         mGenderGroup = (RadioGroup) findViewById(R.id.genderGroup);
 
     }
@@ -46,12 +48,17 @@ public class RegistrationForm extends AppCompatActivity {
         userDetails.setDisplayName(mFirstName.getText().toString()+" "+mLastName.getText().toString());
         userDetails.setDob(mDOB.getText().toString());
         userDetails.setContactNo(mContactNo.getText().toString());
+//        userDetails.setEmailId(mEmailId.getText().toString());
         int genderId = mGenderGroup.getCheckedRadioButtonId();
         mGenderBtn = (RadioButton) findViewById(genderId);
         userDetails.setGender(mGenderBtn.getText().toString());
 
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
+        userDetails.setEmailId(currentUser.getEmail().toString());
+
+        userDetails.setOrg_id("");
+        userDetails.setUser_type("");
 
         mDatabaseReference.child("user_details").child(currentUser.getUid().toString()).setValue(userDetails);
 
